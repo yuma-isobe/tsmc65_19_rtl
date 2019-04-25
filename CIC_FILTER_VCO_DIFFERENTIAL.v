@@ -11,6 +11,6 @@ module CIC_FILTER_VCO_DIFFERENTIAL(IN_p, IN_m, CLK, RES, ENABLE, OUT);
 	CIC_FILTER_VCO CIC_p(IN_p, CLK, RES, ENABLE, OUT01),
 	               CIC_m(IN_m, CLK, RES, ENABLE, OUT02);
 			
-	assign OUT = $signed({1'b0,OUT01})-({1'b0,OUT02});
+	assign OUT = $signed({1'b0,OUT01})-$signed({1'b0,OUT02});
 
 endmodule
